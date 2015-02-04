@@ -1,33 +1,29 @@
-<h1>Listing members</h1>
+<div class="container">
+  <h1>Tech Talent South Family</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Occupation</th>
-      <th>Employer</th>
-      <th>Description</th>
-      <th>Image</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+  <div class="row">
 
-  <tbody>
-    <% @members.each do |member| %>
-      <tr>
-        <td><%= member.name %></td>
-        <td><%= member.occupation %></td>
-        <td><%= member.employer %></td>
-        <td><%= member.description %></td>
-        <td><%= member.image %></td>
-        <td><%= link_to 'Show', member %></td>
-        <td><%= link_to 'Edit', edit_member_path(member) %></td>
-        <td><%= link_to 'Destroy', member, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+      <% @members.each do |member| %>
+        <div class="tile span3">
+          <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+            <div class="flipper">
+              <div class="front">
+                <%= image_tag(member.image_url) if member.image.present? %>
+              </div>
+              <div class="back">
+                <center>
+                  <h3 style="color: white;"><%= member.name %></h3>
+                  <h4 style="color: white;"><%= member.occupation %></h4>
+                  <h4 style="color: white;"><%= member.employer %></h4>
+                  <br>
+                  <%= member.description %>
+                </center>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
 
-<br>
+  </div>
+</div>
 
-<%= link_to 'New Member', new_member_path %>

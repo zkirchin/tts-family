@@ -42,3 +42,4 @@ gem 'spring',        group: :development
 gem 'carrierwave'
 gem 'activeadmin', github: 'activeadmin'
 gem 'devise'
+gem 'bootstrap-sass'
