@@ -38,6 +38,7 @@ gem 'spring',        group: :development
 
 
 gem 'carrierwave'
+gem 'carrierwave-ftp', :require => 'carrierwave/storage/ftp'
 gem 'activeadmin', github: 'activeadmin'
 gem 'devise'
 gem 'bootstrap-sass'
