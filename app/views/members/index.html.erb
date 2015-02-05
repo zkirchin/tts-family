@@ -3,7 +3,7 @@
 
   <div class="row">
 
-      <% @members.each do |member| %>
+      <% @members.shuffle.each do |member| %>
         <div class="tile span3">
           <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
             <div class="flipper">
