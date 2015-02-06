@@ -16,4 +16,3 @@
 /tmp
 
 # Ignore carrierwave initializer
-/config/initializers/carrierwave.rb
