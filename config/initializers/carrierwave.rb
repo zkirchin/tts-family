@@ -1,5 +1,5 @@
 CarrierWave.configure do |config|
-  config.ftp_host = "ftp.techtalentsouth.com"
+  config.ftp_host = "techtalentsouth.com"
   config.ftp_port = 21
   config.ftp_user = "tts-family"
   config.ftp_passwd = "hcn7o8gHfKMf!"
