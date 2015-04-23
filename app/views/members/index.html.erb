@@ -1,6 +1,6 @@
 <div class="container">
   <h1>The Tech Talent South Family</h1>
-  <p>Just like the old saying "It takes a village to raise a child," we belive it takes a community to teach people how to code and immerse them in the world of tech. Below is a handful of people that have been involved with Tech Talent South along the way, from studetns, to staff, to guest lecutures, we consider them all family!</p>
+  <p>Just like the old saying "It takes a village to raise a child," we belive it takes a community to teach people how to code and immerse them in the world of tech. Below is a handful of people that have been involved with Tech Talent South along the way, from studetns, to staff, to guest lecturers, we consider them all family!</p>
 
   <div class="row-fluid">
 
@@ -34,4 +34,37 @@
 
   </div>
 </div>
+
+<script type="text/javascript">
+(function($){
+ 
+    $.fn.shuffle = function() {
+ 
+        var allElems = this.get(),
+            getRandom = function(max) {
+                return Math.floor(Math.random() * max);
+            },
+            shuffled = $.map(allElems, function(){
+                var random = getRandom(allElems.length),
+                    randEl = $(allElems[random]).clone(true)[0];
+                allElems.splice(random, 1);
+                return randEl;
+           });
+ 
+        this.each(function(i){
+            $(this).replaceWith($(shuffled[i]));
+        });
+ 
+        return $(shuffled);
+ 
+    };
+ 
+})(jQuery);
+
+window.setInterval(function(){
+  $('.small_tile').shuffle(){
+    $(".small_tile:lt(5)").show();
+  };
+}, 5000);
+</script>
 
