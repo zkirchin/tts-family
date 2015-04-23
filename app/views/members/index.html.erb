@@ -8,9 +8,26 @@
         <ul>
           <% @members.each do |member| %>
             <li>
-              <a href="#">
-                <img src="<%= member.image_url %>">
-              </a>
+              <div id="<%= member.uniq_identifier %>" class="modal hide fade in" style="display: none; ">  
+                <div class="modal-body">  
+                        <center>  
+                          <%= image_tag(member.image_url) if member.image.present? %>
+                          <h3><%= member.name %></h3>
+                          <h4><%= member.occupation %></h4>
+                          <h4><%= member.employer %></h4>
+                          <br>
+                          <%= member.description %>
+                        </center>                
+                </div>  
+                <div class="modal-footer">   
+                  <a href="#" class="btn" data-dismiss="modal">Close</a>  
+                </div>  
+              </div>
+              <!-- <div class="span1 small_tile" style="margin: .5px;"> -->
+                <a data-toggle="modal" href="#<%= member.uniq_identifier %>">
+                  <%= image_tag(member.image_url) if member.image.present? %>
+                </a>
+              <!-- </div> -->
             </li>
           <% end %>
     </ul>
@@ -24,8 +41,17 @@
 <%= javascript_include_tag "gridrotator" %>
     <script type="text/javascript"> 
       $(function() {
+
+
       
         $( '#ri-grid' ).gridrotator( {
+
+          rows : 4,
+          columns : 15,
+          preventClick :false,
+          interval        : 2000,
+
+
           w320 : {
             rows : 3,
             columns : 4
