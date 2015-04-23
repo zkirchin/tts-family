@@ -122,3 +122,10 @@ body {
 	background: #232121;
 	color: white;
 }
+
+@media (max-width: 767px) {
+	.small_tile {
+		display: inline-block;
+		width: 15%;
+	}
+}
