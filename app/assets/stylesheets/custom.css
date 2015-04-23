@@ -124,7 +124,7 @@ body {
 }
 
 @media (max-width: 767px) {
-	.small_tile {
+	.row-fluid .span1 {
 		display: inline-block;
 		width: 15%;
 	}
