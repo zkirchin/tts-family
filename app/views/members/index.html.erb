@@ -8,7 +8,22 @@
         <ul>
           <% @members.shuffle.each do |member| %>
             <li>
-              <div id="<%= member.uniq_identifier %>" class="modal hide fade in" style="display: none;">  
+                <a data-toggle="modal" href="#<%= member.uniq_identifier %>">
+                  <%= image_tag(member.image_url) if member.image.present? %>
+                </a>
+
+            </li>
+          <% end %>
+    </ul>
+    </div>
+
+    <br><br><br><br><br>
+
+
+    <!-- modal -->
+    <% @members.each do |member| %>
+            <!-- <li> -->
+              <div id="<%= member.uniq_identifier %>" class="modal hide fade in" style="display: none;" tabindex="-1">  
                 <div class="modal-body">  
                         <center>  
                           <%= image_tag(member.image_url) if member.image.present? %>
@@ -23,17 +38,7 @@
                   <a href="#" class="btn" data-dismiss="modal">Close</a>  
                 </div>  
               </div>
-              <!-- <div class="span1 small_tile" style="margin: .5px;"> -->
-                <a data-toggle="modal" href="#<%= member.uniq_identifier %>">
-                  <%= image_tag(member.image_url) if member.image.present? %>
-                </a>
-              <!-- </div> -->
-            </li>
-          <% end %>
-    </ul>
-    </div>
-
-    <br><br><br><br><br>
+    <% end %>
 
   </div>
 </div>
@@ -49,7 +54,7 @@
           rows : 4,
           columns : 15,
           preventClick :false,
-          interval        : 2000,
+          interval        : 2500,
 
 
           w320 : {
@@ -64,4 +69,3 @@
       
       });
     </script>
-
