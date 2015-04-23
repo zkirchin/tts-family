@@ -16,5 +16,6 @@
  *= require bootstrap-responsive
  *= require custom
  *= require mailchimp
+ *= require gridrotator
  *= require_self
  */

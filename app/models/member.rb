@@ -1,7 +1,7 @@
 class Member < ActiveRecord::Base
 	mount_uploader :image, ImageUploader
 
-	  def to_param
+	  def uniq_identifier
 	    "#{name.parameterize}-#{id}"
 	  end
 end
