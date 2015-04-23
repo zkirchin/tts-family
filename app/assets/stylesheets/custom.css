@@ -87,8 +87,8 @@ body {
 	}
 
 .flip-container, .front, .back {
-	width: 250px;
-	height: 250px;
+/*	width: 250px;
+	height: 250px;*/
 	margin-bottom: 40px;
 }
 

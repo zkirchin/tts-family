@@ -4,26 +4,33 @@
 
   <div class="row">
 
-      <% @members.shuffle.each do |member| %>
-        <div class="tile span1">
-          <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
-            <div class="flipper">
-              <div class="front">
-                <%= image_tag(member.image_url) if member.image.present? %>
-              </div>
-              <div class="back">
-                <center>
-                  <h3 style="color: white;"><%= member.name %></h3>
-                  <h4 style="color: white;"><%= member.occupation %></h4>
-                  <h4 style="color: white;"><%= member.employer %></h4>
+    <% @members.shuffle.each do |member| %>
+      <div id="<%= member.to_param %>" class="modal hide fade in" style="display: none; ">  
+        <div class="modal-body">  
+                <center>  
+                  <%= image_tag(member.image_url) if member.image.present? %>
+                  <h3><%= member.name %></h3>
+                  <h4><%= member.occupation %></h4>
+                  <h4><%= member.employer %></h4>
                   <br>
                   <%= member.description %>
-                </center>
-              </div>
-            </div>
-          </div>
-        </div>
-      <% end %>
+                </center>                
+        </div>  
+        <div class="modal-footer">   
+          <a href="#" class="btn" data-dismiss="modal">Close</a>  
+        </div>  
+      </div>
+      <div class="span1">
+        <a data-toggle="modal" href="#<%= member.to_param %>">
+          <%= image_tag(member.image_url) if member.image.present? %>
+        </a>
+      </div>
+    <% end %>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
 
   </div>
 </div>
