@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+ruby "2.2.4"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.8'
@@ -43,11 +44,11 @@ gem 'activeadmin', github: 'activeadmin'
 gem 'devise'
 gem 'bootstrap-sass'
 
-group :production do 
+group :production do
 	gem 'pg'
 	gem 'rails_12factor'
 end
 
-group :development, :test do 
+group :development, :test do
 	gem 'sqlite3'
 end
