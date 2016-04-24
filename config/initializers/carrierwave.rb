@@ -13,7 +13,7 @@
 
 ### new rose hosting sftp###
 CarrierWave.configure do |config|
-  config.sftp_host = "vps.techtalentsouth.com"
+  config.sftp_host = "206.196.115.190"
   config.sftp_user = "root"
   config.sftp_folder = "/home/admin/domains/techtalentsouth.com/public_html/tts-family-uploads"
   config.sftp_url = "http://techtalentsouth.com/tts-family-uploads"
